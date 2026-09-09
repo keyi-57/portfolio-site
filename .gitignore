@@ -1,0 +1,21 @@
+# ── 依赖与构建产物（Netlify 会自动 npm install + npm run build 重新生成，勿提交）──
+node_modules/
+dist/
+
+# 原图备份（压图前的 PNG 源，8.3M，非站点运行所需）
+_media-backup/
+
+# 本地调试产物
+_shots/
+*.log
+
+# 环境变量 / 本地配置
+.env
+.env.*
+*.local
+
+# 系统 & 编辑器
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/

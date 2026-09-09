@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- 版心与布局按 PC 优先设计（1700px），但 viewport 必须响应式，
+         否则 1100px / 1440px 断点永远不会触发，移动端只会把 1280px 整体缩放。 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>李佳跃 — 视觉设计师 / AI 设计师 / 品牌设计师</title>
+    <meta name="description" content="李佳跃 · 视觉设计师 / AI 设计师 / 品牌设计师。AIGC 影像、品牌视觉、概念设计作品集。" />
+
+    <!-- favicon：内联 SVG（黄铜方点 + 近黑底），零额外请求，顺带消掉 /favicon.ico 的 404 -->
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230a0a0c'/%3E%3Crect x='9' y='9' width='14' height='14' fill='none' stroke='%23c9a86a' stroke-width='2.5'/%3E%3C/svg%3E"
+    />
+
+    <!-- 字体：自托管可变字体（见 global.css 顶部注释）。
+         不再请求 fonts.googleapis.com —— 省掉 DNS/TCP/TLS 与国内超时风险，
+         两文件合计 53KB，同 origin 可直接 preload。 -->
+    <link
+      rel="preload"
+      as="font"
+      type="font/woff2"
+      href="/fonts/space-grotesk.woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      as="font"
+      type="font/woff2"
+      href="/fonts/jetbrains-mono.woff2"
+      crossorigin
+    />
+
+    <!-- Hero 视频：
+         注意 Chrome 不支持 <link rel="preload" as="video">（会报 unsupported as value
+         且根本不预载）。真正生效的方式是给 <video> 加 fetchpriority="high"，
+         已在 Hero.jsx 里处理。 -->
+
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

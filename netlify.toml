@@ -1,0 +1,13 @@
+# Netlify 构建配置：关联 Git 后自动生效，无需在后台手动填命令
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "22"
+
+# SPA 兜底：未匹配路径回退到 index.html（本项目是单页，留着更稳）
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
