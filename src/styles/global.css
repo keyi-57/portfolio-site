@@ -1803,3 +1803,11 @@ button.citem {
     font-size: 13px;
   }
 }
+
+/* Netlify 注入的右下角 "Powered by Netlify" badge，公开站点隐藏 */
+.netlify-badge,
+.netlify-sites,
+[class*="netlify-badge"],
+[class*="netlify-sites"] {
+  display: none !important;
+}

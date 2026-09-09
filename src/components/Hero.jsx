@@ -37,6 +37,13 @@ export default function Hero() {
         loop
         playsInline
         preload="auto"
+        volume={0}
+        {...{
+          'x5-video-player-type': 'h5-page',
+          'x5-video-player-fullscreen': 'false',
+          'x5-playsinline': 'true',
+          'webkit-playsinline': 'true'
+        }}
         // Chrome 不支持 <link rel="preload" as="video">，
         // 想让首屏视频优先下载只能靠 fetchpriority
         fetchpriority="high"
