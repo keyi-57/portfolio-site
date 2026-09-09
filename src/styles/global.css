@@ -1806,8 +1806,13 @@ button.citem {
 
 /* Netlify 注入的右下角 "Powered by Netlify" badge，公开站点隐藏 */
 .netlify-badge,
+.netlify_badge,
 .netlify-sites,
+.nl-badge,
+.nl-badge-frame,
 [class*="netlify-badge"],
-[class*="netlify-sites"] {
+[class*="netlify_badge"],
+[class*="netlify-sites"],
+[class*="nl-badge"] {
   display: none !important;
 }
