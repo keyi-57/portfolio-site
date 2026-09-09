@@ -1804,15 +1804,19 @@ button.citem {
   }
 }
 
-/* Netlify 注入的右下角 "Powered by Netlify" badge，公开站点隐藏 */
-.netlify-badge,
-.netlify_badge,
-.netlify-sites,
-.nl-badge,
-.nl-badge-frame,
-[class*="netlify-badge"],
-[class*="netlify_badge"],
-[class*="netlify-sites"],
-[class*="nl-badge"] {
+/* Netlify 注入的右下角 "Powered by Netlify" badge，公开站点隐藏
+   Netlify 通过 <script src="/.netlify/scripts/hud"> 注入一个固定 iframe，
+   id 为 nl-badge-frame（公开版）/ nl-hud-frame（站点 owner 版），
+   必须用 id + 元素选择器覆盖其内联样式。 */
+iframe#nl-badge-frame,
+iframe#nl-hud-frame,
+#nl-badge-frame,
+#nl-hud-frame {
   display: none !important;
+  visibility: hidden !important;
+  clip-path: inset(100%) !important;
+  width: 0 !important;
+  height: 0 !important;
+  pointer-events: none !important;
+  z-index: -1 !important;
 }
